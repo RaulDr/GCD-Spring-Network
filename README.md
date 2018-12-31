@@ -10,3 +10,5 @@ If changes are intended, the applications need to be rebuild, to do this, enter 
 
 The application returns the GDC of the env variables (values) defined in the docker-compose file.
 The final result is sent to the tower-control.
+
+![CMD Run](https://github.com/RaulDr/GCD-Spring-Network/blob/master/gdc-spring-network/res_images/Capture.JPG)
