@@ -1,0 +1,51 @@
+version: "3"
+services:
+  node1:
+    build:
+      context: ./gdc-spring-network
+      dockerfile: Dockerfile
+    environment:
+      url: http://node1:8080/gdc
+      target.url: http://node2:8080/gdc
+      value: 32
+    ports:
+    - "8081:8080"
+    networks:
+    - webnet
+  node2:
+      build:
+        context: ./gdc-spring-network
+        dockerfile: Dockerfile
+      environment:
+        url: http://node2:8080/gdc
+        target.url: http://node3:8080/gdc
+        value: 4
+      ports:
+      - "8082:8080"
+      networks:
+      - webnet
+      
+  node3:
+      build:
+        context: ./gdc-spring-network
+        dockerfile: Dockerfile
+      environment:
+        url: http://node3:8080/gdc
+        target.url: http://node1:8080/gdc
+        value: 12
+      ports:
+      - "8083:8080"
+      networks:
+      - webnet
+      
+  towercontrol:
+      build:
+        context: ./gdc-spring-network
+        dockerfile: Dockerfile
+      ports:
+      - "8080:8080"
+      networks:
+      - webnet
+      
+networks:
+ webnet:
