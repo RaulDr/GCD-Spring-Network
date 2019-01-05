@@ -12,3 +12,4 @@ The application returns the GDC of the env variables (values) defined in the doc
 The final result is sent to the tower-control.
 
 ![CMD Run](https://github.com/RaulDr/GCD-Spring-Network/blob/master/gdc-spring-network/res_images/Capture.JPG)
+![CMD Run FINISH](https://github.com/RaulDr/GCD-Spring-Network/blob/master/gdc-spring-network/res_images/2019-01-05_17h34_46.png)
