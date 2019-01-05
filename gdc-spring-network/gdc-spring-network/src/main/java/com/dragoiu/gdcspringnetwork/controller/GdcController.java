@@ -41,7 +41,6 @@ public class GdcController {
         } catch (Exception e) {
             return e.getMessage();
         }
-//        return "ceva";
     }
 
     @PostMapping(value = "/gdc")
@@ -49,6 +48,7 @@ public class GdcController {
         System.out.println(value);
         if (flag) {
             post.finishTowerControl(value);
+            flag = false;
         } else {
             int gdc = Gdc.gdc(Integer.parseInt(value), Integer.parseInt(this.value));
             post.postToNextNode(String.valueOf(gdc), targetURL);
