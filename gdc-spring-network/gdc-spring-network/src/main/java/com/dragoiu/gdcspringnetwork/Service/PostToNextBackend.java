@@ -14,8 +14,8 @@ public class PostToNextBackend {
     }
 
     public Integer finishTowerControl(String value) {
-        final String uri = "http://towercontol:8080/finish";
-
+        final String uri = "http://tower-control:8080/output";
+        System.out.println("something is happening");
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForObject(uri, value, Integer.class);
     }

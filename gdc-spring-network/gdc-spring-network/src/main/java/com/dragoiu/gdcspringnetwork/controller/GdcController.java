@@ -12,17 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GdcController {
 
-    private boolean flag = false;
-
     @Value("${url:ceva}")
     String URL;
     @Value("${target.url:ceva}")
     String targetURL;
     @Value("${value:1}")
     String value;
-
     @Autowired
     PostToNextBackend post;
+    private boolean flag = false;
 
     @GetMapping(value = "/dummyValues")
     public String shit() {
@@ -35,6 +33,17 @@ public class GdcController {
         post.postToNextNode(value, targetURL);
     }
 
+    @GetMapping(value = "/ceva")
+    public String dummyController() {
+        System.out.println("ceva");
+        try {
+            return String.valueOf(post.finishTowerControl("234"));
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+//        return "ceva";
+    }
+
     @PostMapping(value = "/gdc")
     public void getGDC(@RequestBody String value) {
         System.out.println(value);
@@ -45,5 +54,4 @@ public class GdcController {
             post.postToNextNode(String.valueOf(gdc), targetURL);
         }
     }
-
 }
