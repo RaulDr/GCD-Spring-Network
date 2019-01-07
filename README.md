@@ -13,8 +13,8 @@ response, the function is a **void**. Look for the final result in the console.
 
 If changes are intended, the applications need to be rebuild, to do this, enter whichever and run: 
 ```
-   gradlew build 
-   docker-compose up --build
+   gradlew build ( in ...\GCD-Spring-Network\gdc-spring-network\gdc-spring-network and ..\GCD-Spring-Network\gdc-spring-network\gdc-spring-tower-control)
+   docker-compose up --build ( in ...\GCD-Spring-Network\gdc-spring-network)
 ```
 To make sure all the containers are running, run: `docker ps`
 
